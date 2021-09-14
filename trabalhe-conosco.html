@@ -188,7 +188,7 @@
 					<p>Iremos te redirecionar para a página inicial...</p>
 				</div>
 				
-				<button class="btn btn-dark" type="submit">ENVIAR</button>
+				<button id="form-submit-btn" class="btn btn-dark" type="submit">ENVIAR</button>
 				
 				</form>
 			</div>
@@ -208,6 +208,8 @@
 				
 					console.log("Formulário enviado!");
 					
+					botao = document.getElementById("form-submit-btn");
+					
 					elements = form.elements;
 					
 					par = {};
@@ -216,6 +218,7 @@
 					
 						var item = elements.item(i);
 						par[item.id] = [item.value];
+						item.readOnly = true;
 					
 					}
 					console.log(par)
