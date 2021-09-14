@@ -170,24 +170,62 @@
 
 				</div>
 				
-				
-				
-				
-				
-				
-				
-				
-				
 
+				<div class="row">
+				
+				<div class="col">
+				
 				<div class="form-group">
 					<label for="mensagem">MENSAGEM:</label>
 					<textarea class="form-control" id="mensagem" rows="4"></textarea>
+				</div>
+				
+				</div>
+				</div>
+				
+				<div id="toast" style="display: none">	
+					<p>Obrigado pelo envio! Entraremos em contato!</p>
+					<p>Iremos te redirecionar para a página inicial...</p>
 				</div>
 				
 				<button class="btn btn-dark" type="submit">ENVIAR</button>
 				
 				</form>
 			</div>
+			
+			
+			<script>
+			
+				form = document.getElementById("form-trabalhe")
+				
+				form.addEventListener('submit', function(e){
+				
+					e.preventDefault();
+					
+					toast = document.getElementById("toast");
+					
+					toast.style.display = "block";
+				
+					console.log("Formulário enviado!");
+					
+					elements = form.elements;
+					
+					par = {};
+					
+					for(var i=0; i<elements.length; i++){
+					
+						var item = elements.item(i);
+						par[item.id] = [item.value];
+					
+					}
+					console.log(par)
+				}
+				);
+			
+			
+			
+			
+			</script>
 			
 			
 		</div>
